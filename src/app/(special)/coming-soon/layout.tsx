@@ -17,12 +17,12 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AMDCreatives — Coming Soon",
+  title: "Amd Creatives - Coming Soon",
   description:
     "A creative studio built for bold brands. Visuals, strategy, and stories designed to make your audience stop scrolling.",
   keywords: ["creative studio", "video content", "branding", "visuals", "AMDCreatives"],
   openGraph: {
-    title: "AMDCreatives — Coming Soon",
+    title: "Amd Creatives - Coming Soon",
     description: "Something extraordinary is being crafted. Stay tuned.",
     type: "website",
     url: "https://amdcreatives.com",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AMDCreatives — Coming Soon",
+    title: "Amd Creatives - Coming Soon",
     description: "Something extraordinary is being crafted. Stay tuned.",
   },
   robots: { index: true, follow: true },

@@ -2,8 +2,6 @@ import Topbar from "@/src/components/ui/Topbar";
 import DecorativeCorners from "@/src/components/ui/DecorativeCorners";
 import Countdown from "@/src/components/ui/Countdown";
 import ProgressBar from "@/src/components/ui/ProgressBar";
-import NotifyForm from "@/src/components/ui/NotifyForm";
-import Socials from "@/src/components/ui//Socials";
 import Link from "next/link";
 
 export default function ComingSoonPage() {
