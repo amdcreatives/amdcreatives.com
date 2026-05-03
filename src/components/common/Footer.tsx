@@ -10,7 +10,7 @@ export default function Footer() {
           
           {/* Column 1: Contact */}
           <div>
-            <h4 className="text-white font-bold mb-6 tracking-tight">Contact</h4>
+            <h2 className="text-white font-bold mb-6 tracking-tight">Contact</h2>
             <Link 
               href="mailto:amdcreatives.info@gmail.com" 
               className="text-gray-500 hover:text-white transition-colors"
@@ -21,7 +21,7 @@ export default function Footer() {
 
           {/* Column 2: Navigation */}
           <div>
-            <h4 className="text-white font-bold mb-6 tracking-tight">Navigation</h4>
+            <h2 className="text-white font-bold mb-6 tracking-tight">Navigation</h2>
             <div className="grid grid-cols-2 gap-y-4">
               <Link href="/" className="text-gray-500 hover:text-white transition-colors">Home</Link>
               <Link href="#creativesAbout" className="text-gray-500 hover:text-white transition-colors">About</Link>
@@ -34,7 +34,7 @@ export default function Footer() {
 
           {/* Column 3: Social Media */}
           <div>
-            <h4 className="text-white font-bold mb-6 tracking-tight">Social Media</h4>
+            <h2 className="text-white font-bold mb-6 tracking-tight">Social Media</h2>
             <div className="flex flex-col gap-4">
               {['Facebook', 'Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
                 <Link 

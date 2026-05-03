@@ -155,7 +155,7 @@ export default function ContactSection() {
                     <Image src="/tanvir-ahmed.webp" alt="Tanvir Ahmed" fill className="object-cover" />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-sm">Tanvir Ahmed</h4>
+                    <h3 className="text-white font-bold text-sm">Tanvir Ahmed</h3>
                     <p className="text-gray-500 text-xs">Founder & CEO</p>
                   </div>
                 </div>
