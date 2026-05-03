@@ -1,5 +1,4 @@
 "use client";
-"use client";
 
 import { useState, useRef } from "react";
 import { AlertCircle, CheckCircle2, Loader2, Mail, MessageCircle, Send } from "lucide-react";
@@ -14,40 +13,54 @@ export default function ContactSection() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    
-    // Safety check: Ensure captcha is done if you want to force it
+
+    // 1. Safety check for Captcha
     if (!captchaToken) {
       alert("Please complete the captcha");
       return;
     }
 
     setStatus("loading");
+
+    // 2. Prepare Data
     const formData = new FormData(e.currentTarget);
     
+    // Add the required Web3Forms fields
     formData.append("access_key", "37a83d36-3d33-4d4d-aa56-29a1ca773f2f");
-    formData.append("h-captcha-response", captchaToken); // Connect HCaptcha to Web3Forms
+    formData.append("h-captcha-response", captchaToken); 
+
+    // 3. Convert FormData to a plain object for JSON submission
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // Note: Added the trailing slash to the URL to prevent "POST method" redirect errors
+      const response = await fetch("https://api.web3forms.com/submit/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(Object.fromEntries(formData)),
+        body: json,
       });
 
       const data = await response.json();
 
       if (data.success) {
         setStatus("success");
+        
+        // 4. Reset Form and Captcha
         (e.target as HTMLFormElement).reset();
-        captchaRef.current?.resetCaptcha(); // Reset captcha visually
-        setCaptchaToken(null); // Clear token
+        if (captchaRef.current) {
+          captchaRef.current.resetCaptcha();
+        }
+        setCaptchaToken(null);
       } else {
+        console.error("Submission failed:", data.message);
         setStatus("error");
       }
     } catch (error) {
+      console.error("Network error:", error);
       setStatus("error");
     }
   }
