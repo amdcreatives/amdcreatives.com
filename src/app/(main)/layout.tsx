@@ -40,6 +40,19 @@ export const metadata: Metadata = {
     description:
       "Helping brands and podcasters stand out with eye-catching, scroll-stopping video content.",
   },
+  icons: {
+    icon: "/favicon/favicon.ico",
+    shortcut: "/favicon/favicon-32x32.png",
+    apple: "/favicon/apple-touch-icon.png",
+    // You can also add specific sizes
+    other: [
+      {
+        rel: "icon",
+        url: "/favicon/favicon-16x16.png",
+        sizes: "16x16",
+      },
+    ],
+  },
   robots: {
     index: true,
     follow: true,

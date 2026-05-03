@@ -1,22 +1,31 @@
 "use client";
+"use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { AlertCircle, CheckCircle2, Loader2, Mail, MessageCircle, Send } from "lucide-react";
 import Image from "next/image";
-import { HCaptcha } from "@hcaptcha/react-hcaptcha";
+import HCaptcha from "@hcaptcha/react-hcaptcha"; // Standard import
 import Link from "next/link";
 
 export default function ContactSection() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const captchaRef = useRef<HCaptcha>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("loading");
+    
+    // Safety check: Ensure captcha is done if you want to force it
+    if (!captchaToken) {
+      alert("Please complete the captcha");
+      return;
+    }
 
+    setStatus("loading");
     const formData = new FormData(e.currentTarget);
     
-    // Add your Web3Forms Access Key here (Get one for free at web3forms.com)
     formData.append("access_key", "37a83d36-3d33-4d4d-aa56-29a1ca773f2f");
+    formData.append("h-captcha-response", captchaToken); // Connect HCaptcha to Web3Forms
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -29,6 +38,8 @@ export default function ContactSection() {
       if (data.success) {
         setStatus("success");
         (e.target as HTMLFormElement).reset();
+        captchaRef.current?.resetCaptcha(); // Reset captcha visually
+        setCaptchaToken(null); // Clear token
       } else {
         setStatus("error");
       }
@@ -41,7 +52,7 @@ export default function ContactSection() {
     <section id="creativesContact" className="bg-[#0a0a0a] py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-white text-3xl md:text-5xl font-bold mb-4">Have a Projects?</h2>
+          <h2 className="text-white text-3xl md:text-5xl font-bold mb-4">Have a Project?</h2>
           <p className="text-3xl md:text-5xl font-bold text-gray-500">Let&apos;s Talk</p>
         </div>
 
@@ -81,8 +92,8 @@ export default function ContactSection() {
                   <label className="block text-gray-400 text-sm mb-2">Project Budget</label>
                   <input 
                     name="budget"
-                    type="text" 
-                    placeholder="Enter your Budget" 
+                    type="text"
+                    placeholder="Enter your Budget ($)" 
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-blue-500 transition-colors"
                   />
                 </div>
@@ -101,17 +112,17 @@ export default function ContactSection() {
               </div>
 
               <HCaptcha
+                ref={captchaRef}
                 sitekey="987a78d0-4570-4c7e-8336-ec80a9f22f70"
-                onVerify={(token) => {
-                  // You can store this token in a state to enable the submit button
-                }}
+                onVerify={(token) => setCaptchaToken(token)}
+                onExpire={() => setCaptchaToken(null)}
+                theme="dark" // Matches your aesthetic
               />
 
-              {/* Submit Button */}
               <button 
-                disabled={status === "loading"}
+                disabled={status === "loading" || !captchaToken} // Disable if no captcha
                 type="submit"
-                className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 hover:cursor-pointer disabled:bg-blue-800 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2"
+                className="w-full md:w-auto bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2"
               >
                 {status === "loading" ? (
                   <>Sending... <Loader2 className="w-5 h-5 animate-spin" /></>
