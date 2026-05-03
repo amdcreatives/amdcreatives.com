@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,12 +34,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Amd Creatives",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1470,
+        height: 800,
+        alt: "Amd Creatives - Video Content Systems",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amd Creatives - Professional Video Content & Ad Creatives",
     description:
       "Helping brands and podcasters stand out with eye-catching, scroll-stopping video content.",
+    images: ["/og-image.webp"],
   },
   icons: {
     icon: "/favicon/favicon.ico",
@@ -70,6 +80,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         {children}
+        <GoogleTagManager gtmId="G-EVYFLB827G" />
       </body>
     </html>
   );

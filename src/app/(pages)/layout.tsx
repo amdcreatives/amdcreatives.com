@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css"; // Ensure your Tailwind styles are loaded
+import "../globals.css";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-[#0a0a0a] text-white antialiased`}>
-        {/* You can add your Header/Navbar here so it shows on every page */}
         {children}
-        {/* You can add your Footer here */}
+        <GoogleTagManager gtmId="G-EVYFLB827G" />
       </body>
     </html>
   );

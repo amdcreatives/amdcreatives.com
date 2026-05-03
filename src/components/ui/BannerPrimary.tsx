@@ -56,7 +56,7 @@ export default function Hero() {
           <div className="absolute inset-0 bg-blue-600/20 rounded-4xl blur-2xl group-hover:bg-blue-600/30 transition duration-500" />
           <div className="relative aspect-square overflow-hidden rounded-4xl border border-white/10">
             <Image
-              src="/shooting-video.jpg" // Add your image to public/ folder
+              src="/intro-video.webp" // Add your image to public/ folder
               alt="Professional video production team on set"
               fill
               className="object-cover"

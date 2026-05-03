@@ -55,7 +55,7 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold">{review.name}</h4>
+                  <h3 className="text-white font-bold">{review.name}</h3>
                   <p className="text-gray-500 text-sm">{review.role}</p>
                 </div>
               </div>
