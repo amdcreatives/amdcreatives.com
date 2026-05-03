@@ -13,7 +13,7 @@ export default function ComingSoonPage() {
       <div
         aria-hidden="true"
         className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-                   w-[900px] h-[900px] pointer-events-none z-0"
+                   w-225 h-225 pointer-events-none z-0"
         style={{
           background:
             "radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 65%)",
@@ -30,16 +30,16 @@ export default function ComingSoonPage() {
         role="main"
       >
         <section
-          className="flex flex-col items-center text-center gap-6 max-w-[720px]
+          className="flex flex-col items-center text-center gap-6 max-w-180
                      animate-fade-up delay-200"
           aria-label="Launch announcement"
         >
           {/* Eyebrow */}
           <p
             className="flex items-center gap-3 text-[0.7rem] tracking-[0.3em]
-                       uppercase text-[var(--gold)]
-                       before:block before:w-8 before:h-px before:bg-[var(--gold)] before:opacity-50
-                       after:block  after:w-8  after:h-px  after:bg-[var(--gold)] after:opacity-50"
+                       uppercase text-(--gold)
+                       before:block before:w-8 before:h-px before:bg-(--gold) before:opacity-50
+                       after:block  after:w-8  after:h-px  after:bg-(--gold) after:opacity-50"
             aria-hidden="true"
           >
             Something extraordinary is being crafted

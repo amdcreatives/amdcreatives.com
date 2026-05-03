@@ -37,7 +37,7 @@ export default function Socials() {
           rel="noopener noreferrer"
           aria-label={label}
           className="group w-9 h-9 rounded-full flex items-center justify-center
-                     bg-[var(--surface2)] border border-[rgba(255,255,255,0.1)]
+                     bg-(--surface2) border border-[rgba(255,255,255,0.1)]
                      hover:border-[rgba(201,168,76,0.5)] hover:-translate-y-0.5
                      transition-all duration-200"
         >
