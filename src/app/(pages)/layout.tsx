@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import { GoogleTagManager } from "@next/third-parties/google";
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +19,20 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-[#0a0a0a] text-white antialiased`}>
         {children}
-        <GoogleTagManager gtmId="G-EVYFLB827G" />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-EVYFLB827G"
+        />
+
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-EVYFLB827G');
+          `}
+        </Script>
       </body>
     </html>
   );
