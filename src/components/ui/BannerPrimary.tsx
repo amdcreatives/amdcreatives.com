@@ -53,6 +53,23 @@ export default function Hero() {
 
         {/* Right Image/Video Container */}
         <div className="relative group">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white">
+                <Play />
+              </div>
+          </div>
+  
+          <div className="relative aspect-square overflow-hidden rounded-4xl border border-white/10 hover:cursor-pointer">
+            <video
+              src="/intro-amd-creatives.webm"
+              poster="/intro-video.webp"
+              controls
+              playsInline
+              className="w-full h-full object-cover focus:outline-none"
+            />
+          </div>
+        </div>
+        {/* <div className="relative group">
           <div className="absolute inset-0 bg-blue-600/20 rounded-4xl blur-2xl group-hover:bg-blue-600/30 transition duration-500" />
           <div className="relative aspect-square overflow-hidden rounded-4xl border border-white/10">
             <Image
@@ -62,14 +79,13 @@ export default function Hero() {
               className="object-cover"
               priority
             />
-            {/* Optional Overlay Play Button */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/10 transition">
                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 text-white">
                   <Play />
                </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

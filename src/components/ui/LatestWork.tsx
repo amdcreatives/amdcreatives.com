@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Play, X, Languages } from "lucide-react"; // Added Languages icon
 
-const categories = ["Ad Creatives & VSL", "Shorts", "YouTube Videos", "SaaS Videos", "Podcast"];
+const categories = ["Ad Creatives & VSL", "Shorts","AI & Animations", "YouTube Videos", "SaaS Videos", "Podcast"];
 
 const projects = [
   { 
@@ -13,7 +13,7 @@ const projects = [
     category: "Ad Creatives & VSL",
     image: "/videos/neck-massager.webp",
     video: "/videos/neck-massager.webm",
-    language: "en"
+    language: "eng"
   },
   { 
     id: 2, 
@@ -21,7 +21,7 @@ const projects = [
     category: "SaaS Videos", 
     image: "/videos/wedding-services.webp",
     video: "/videos/wedding-services.webm",
-    language: "en"
+    language: "eng"
   },
   { 
     id: 3, 
@@ -29,7 +29,7 @@ const projects = [
     category: "Shorts",
     image: "/videos/launch-pointe.webp",
     video: "/videos/launch-pointe.webm",
-    language: "en"
+    language: "eng"
   },
   { 
     id: 4, 
@@ -37,7 +37,55 @@ const projects = [
     category: "Podcast",
     image: "/videos/health-concern.webp",
     video: "/videos/health-concern.webm",
-    language: "en"
+    language: "eng"
+  },
+  { 
+    id: 5, 
+    title: "Clear Air Animated",
+    category: "AI & Animations",
+    image: "/videos/clear-air-animated-norwegian.webp",
+    video: "/videos/clear-air-animated-norwegian.webm",
+    language: "nor"
+  },
+  { 
+    id: 6, 
+    title: "Nasal Stick",
+    category: "AI & Animations",
+    image: "/videos/clear-air-animated-swedish.webp",
+    video: "/videos/clear-air-animated-swedish.webm",
+    language: "swe"
+  },
+  { 
+    id: 61, 
+    title: "Nasal Stick",
+    category: "Ad Creatives & VSL",
+    image: "/videos/clear-air-animated-swedish.webp",
+    video: "/videos/clear-air-animated-swedish.webm",
+    language: "swe"
+  },
+  { 
+    id: 7, 
+    title: "Clear Air",
+    category: "Podcast",
+    image: "/videos/clear-air-danish.webp",
+    video: "/videos/clear-air-danish.webm",
+    language: "dan"
+  },
+  { 
+    id: 71, 
+    title: "Clear Air",
+    category: "Ad Creatives & VSL",
+    image: "/videos/clear-air-danish.webp",
+    video: "/videos/clear-air-danish.webm",
+    language: "dan"
+  },
+  { 
+    id: 8, 
+    title: "Sleep Strips",
+    category: "Ad Creatives & VSL",
+    image: "/videos/sleep-strips.webp",
+    video: "/videos/sleep-strips.webm",
+    language: "eng"
   },
 ];
 
