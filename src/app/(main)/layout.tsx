@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Amd Creatives",
     images: [
       {
-        url: "/og-image.webp",
+        url: "https://amdcreatives.com/og-image.webp",
         width: 1470,
         height: 800,
         alt: "Amd Creatives - Video Content Systems",
@@ -48,17 +48,17 @@ export const metadata: Metadata = {
     title: "Amd Creatives - Professional Video Content & Ad Creatives",
     description:
       "Helping brands and podcasters stand out with eye-catching, scroll-stopping video content.",
-    images: ["/og-image.webp"],
+    images: ["https://amdcreatives.com/og-image.webp"],
   },
   icons: {
-    icon: "/favicon/favicon.ico",
-    shortcut: "/favicon/favicon-32x32.png",
-    apple: "/favicon/apple-touch-icon.png",
+    icon: "https://amdcreatives.com/favicon/favicon.ico",
+    shortcut: "https://amdcreatives.com/favicon/favicon-32x32.png",
+    apple: "https://amdcreatives.com/favicon/apple-touch-icon.png",
     // You can also add specific sizes
     other: [
       {
         rel: "icon",
-        url: "/favicon/favicon-16x16.png",
+        url: "https://amdcreatives.com/favicon/favicon-16x16.png",
         sizes: "16x16",
       },
     ],
