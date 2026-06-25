@@ -2,6 +2,12 @@ import Link from "next/link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const socialLinks = [
+    { name: 'Instagram', url: 'https://www.instagram.com/amd_creatives/' },
+    { name: 'TikTok', url: 'https://www.tiktok.com/@amd_creatives' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/tanvir-ahmed-b98301411/' },
+    { name: 'YouTube', url: 'https://www.youtube.com/@amd-creatives' },
+  ];
 
   return (
     <footer className="bg-[#0a0a0a] pt-24 pb-12 px-6 border-t border-white/5">
@@ -36,13 +42,15 @@ export default function Footer() {
           <div>
             <h2 className="text-white font-bold mb-6 tracking-tight">Social Media</h2>
             <div className="flex flex-col gap-4">
-              {['Facebook', 'Instagram', 'LinkedIn', 'Twitter'].map((platform) => (
+              {socialLinks.map((social) => (
                 <Link 
-                  key={platform} 
-                  href="#" 
+                  key={social.name} 
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="group flex items-center justify-between text-gray-500 hover:text-white transition-colors max-w-37.5"
                 >
-                  {platform}
+                  {social.name}
                   <span className="text-xs opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
                 </Link>
               ))}

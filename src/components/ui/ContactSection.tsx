@@ -62,7 +62,7 @@ export default function ContactSection() {
               
               <div className="grid md:grid-cols-1 gap-6">
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">Full Name</label>
+                  <label className="block text-gray-400 text-sm mb-2">Full Name*</label>
                   <input 
                     name="name"
                     required
@@ -75,7 +75,7 @@ export default function ContactSection() {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-400 text-sm mb-2">Email Address</label>
+                  <label className="block text-gray-400 text-sm mb-2">Email Address*</label>
                   <input 
                     name="email"
                     required
@@ -96,7 +96,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block text-gray-400 text-sm mb-2">Tell us about your projects</label>
+                <label className="block text-gray-400 text-sm mb-2">Tell us about your projects*</label>
                 <textarea 
                   name="message"
                   required
@@ -148,18 +148,30 @@ export default function ContactSection() {
                     <MessageCircle className="w-4 h-4" /> +88 015 116 58200</Link>
                 </div>
               </div>
-
-              <div className="mt-12 p-6 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/20">
-                    <Image src="/tanvir-ahmed.webp" alt="Tanvir Ahmed" fill className="object-cover" />
+              <div className="space-y-5 mt-8">
+                <div className="p-6 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-sm">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/20">
+                      <Image src="/photos/tanvir-ahmed.webp" alt="Tanvir Ahmed" fill className="object-cover" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-sm">Tanvir Ahmed</h3>
+                      <p className="text-gray-500 text-xs">Founder & CEO</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-bold text-sm">Tanvir Ahmed</h3>
-                    <p className="text-gray-500 text-xs">Founder & CEO</p>
+                  <p className="text-gray-400 text-xs leading-relaxed">With a passion for storytelling and design, we create high-performing video content that helps brands grow, connect, and convert one edit at a time.</p>
+                </div>
+                <div className="p-6 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-sm">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden border border-white/20">
+                      <Image src="/photos/tahasin-ahmed.webp" alt="Tahasin Ahmed" fill className="object-cover" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-sm">Tahasin Ahmed</h3>
+                      <p className="text-gray-500 text-xs">Co-Founder & COO</p>
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-400 text-xs leading-relaxed">With a passion for storytelling and design, we create high-performing video content that helps brands grow, connect, and convert one edit at a time.</p>
               </div>
             </div>
           </div>
