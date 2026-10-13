@@ -8,7 +8,23 @@ const categories = ["Ad Creatives & VSL", "Shorts","AI & Animations", "YouTube V
 
 const projects = [
   { 
-    id: 1, 
+    id: 7, 
+    title: "Qure Micro Infusion",
+    category: "Ad Creatives & VSL",
+    image: "/videos/qure-micro-infusion.webp",
+    video: "/videos/qure-micro-infusion.webm",
+    language: "eng"
+  },
+  { 
+    id: 8, 
+    title: "Suno AI Animation",
+    category: "Ad Creatives & VSL",
+    image: "/videos/suno-ai-animation.webp",
+    video: "/videos/suno-ai-animation.webm",
+    language: "swe"
+  },
+  { 
+    id: 9, 
     title: "Neck Massager",
     category: "Ad Creatives & VSL",
     image: "/videos/neck-massager.webp",
@@ -16,7 +32,7 @@ const projects = [
     language: "eng"
   },
   { 
-    id: 2, 
+    id: 10, 
     title: "Wedding Services",
     category: "SaaS Videos", 
     image: "/videos/wedding-services.webp",
@@ -24,7 +40,7 @@ const projects = [
     language: "eng"
   },
   { 
-    id: 3, 
+    id: 11, 
     title: "Launch Pointe",
     category: "Shorts",
     image: "/videos/launch-pointe.webp",
@@ -32,7 +48,7 @@ const projects = [
     language: "eng"
   },
   { 
-    id: 4, 
+    id: 12, 
     title: "Health Concern",
     category: "Podcast",
     image: "/videos/health-concern.webp",
@@ -40,7 +56,7 @@ const projects = [
     language: "eng"
   },
   { 
-    id: 5, 
+    id: 13, 
     title: "Clear Air Animated",
     category: "AI & Animations",
     image: "/videos/clear-air-animated-norwegian.webp",
@@ -48,7 +64,7 @@ const projects = [
     language: "nor"
   },
   { 
-    id: 6, 
+    id: 14, 
     title: "Nasal Stick",
     category: "AI & Animations",
     image: "/videos/clear-air-animated-swedish.webp",
@@ -56,7 +72,7 @@ const projects = [
     language: "swe"
   },
   { 
-    id: 61, 
+    id: 15, 
     title: "Nasal Stick",
     category: "Ad Creatives & VSL",
     image: "/videos/clear-air-animated-swedish.webp",
@@ -64,7 +80,7 @@ const projects = [
     language: "swe"
   },
   { 
-    id: 7, 
+    id: 16, 
     title: "Clear Air",
     category: "Podcast",
     image: "/videos/clear-air-danish.webp",
@@ -72,7 +88,7 @@ const projects = [
     language: "dan"
   },
   { 
-    id: 71, 
+    id: 17, 
     title: "Clear Air",
     category: "Ad Creatives & VSL",
     image: "/videos/clear-air-danish.webp",
@@ -80,11 +96,19 @@ const projects = [
     language: "dan"
   },
   { 
-    id: 8, 
+    id: 18, 
     title: "Sleep Strips",
     category: "Ad Creatives & VSL",
     image: "/videos/sleep-strips.webp",
     video: "/videos/sleep-strips.webm",
+    language: "eng"
+  },
+  { 
+    id: 19, 
+    title: "Legal Claim",
+    category: "YouTube Videos",
+    image: "/videos/legal-claim.webp",
+    video: "/videos/legal-claim.webm",
     language: "eng"
   },
 ];

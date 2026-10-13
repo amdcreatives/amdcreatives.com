@@ -5,7 +5,7 @@ export default function Footer() {
   const socialLinks = [
     { name: 'Instagram', url: 'https://www.instagram.com/amd_creatives/' },
     { name: 'TikTok', url: 'https://www.tiktok.com/@amd_creatives' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/tanvir-ahmed-b98301411/' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/amd-creatives' },
     { name: 'YouTube', url: 'https://www.youtube.com/@amd-creatives' },
   ];
 
