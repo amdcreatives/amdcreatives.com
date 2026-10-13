@@ -18,7 +18,7 @@ const projects = [
   { 
     id: 8, 
     title: "Suno AI Animation",
-    category: "Ad Creatives & VSL",
+    category: "AI & Animations",
     image: "/videos/suno-ai-animation.webp",
     video: "/videos/suno-ai-animation.webm",
     language: "swe"
@@ -67,14 +67,6 @@ const projects = [
     id: 14, 
     title: "Nasal Stick",
     category: "AI & Animations",
-    image: "/videos/clear-air-animated-swedish.webp",
-    video: "/videos/clear-air-animated-swedish.webm",
-    language: "swe"
-  },
-  { 
-    id: 15, 
-    title: "Nasal Stick",
-    category: "Ad Creatives & VSL",
     image: "/videos/clear-air-animated-swedish.webp",
     video: "/videos/clear-air-animated-swedish.webm",
     language: "swe"
