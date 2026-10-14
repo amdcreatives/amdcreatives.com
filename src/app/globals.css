@@ -29,3 +29,19 @@ body {
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 }
 
+/* Offset anchor navigation to account for the fixed navbar */
+[id^="creatives"] {
+  scroll-margin-top: 60px;
+}
+
+/* Smooth scrolling between sections */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive offset */
+@media (max-width: 640px) {
+  [id^="creatives"] {
+    scroll-margin-top: 30px;
+  }
+}
