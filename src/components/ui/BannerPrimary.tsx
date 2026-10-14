@@ -9,8 +9,8 @@ const avatars = [
   '/avatars/avatar-1.webp',
   '/avatars/avatar-2.webp',
   '/avatars/avatar-3.webp',
-  '/avatars/avatar-4.webp',
-  '/avatars/avatar-5.webp',
+  '/avatars/avatar-1.webp',
+  '/avatars/avatar-2.webp',
 ];
 
 const services = [
@@ -45,6 +45,57 @@ export default function BannerPrimary() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [videoOpen]);
+
+  // Preload hero video during browser idle time
+useEffect(() => {
+  let video: HTMLVideoElement | null = null;
+
+  const preloadVideo = () => {
+    video = document.createElement('video');
+    video.preload = 'auto';
+    video.src = '/intro-amd-creatives.webm';
+    video.load();
+  };
+
+  const cleanupVideo = () => {
+    if (video) {
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+      video = null;
+    }
+  };
+
+  const idleWindow = window as Window & {
+    requestIdleCallback?: (
+      callback: () => void,
+      options?: { timeout: number }
+    ) => number;
+    cancelIdleCallback?: (id: number) => void;
+  };
+
+  if (
+    typeof idleWindow.requestIdleCallback === 'function' &&
+    typeof idleWindow.cancelIdleCallback === 'function'
+  ) {
+    const idleId = idleWindow.requestIdleCallback(preloadVideo, {
+      timeout: 2000,
+    });
+
+    return () => {
+      idleWindow.cancelIdleCallback?.(idleId);
+      cleanupVideo();
+    };
+  }
+
+  const timeoutId: ReturnType<typeof globalThis.setTimeout> =
+    globalThis.setTimeout(preloadVideo, 1000);
+
+  return () => {
+    globalThis.clearTimeout(timeoutId);
+    cleanupVideo();
+  };
+}, []);
 
   // Start playback when the modal opens.
   useEffect(() => {
@@ -257,7 +308,7 @@ export default function BannerPrimary() {
             role="dialog"
             aria-modal="true"
             aria-label="AMD Creatives video player"
-            className="relative flex max-h-[92dvh] w-full max-w-6xl items-center justify-center"
+            className="relative flex max-h-[92dvh] max-w-6xl items-center justify-center"
           >
             {/* Close Button */}
             <button
@@ -265,7 +316,7 @@ export default function BannerPrimary() {
               type="button"
               onClick={closeModal}
               aria-label="Close video"
-              className="absolute -top-12 right-0 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:-right-12 sm:top-0"
+              className="absolute -top-12 right-0 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20 hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 sm:-right-12 sm:top-0"
             >
               <X size={22} />
             </button>
@@ -278,8 +329,7 @@ export default function BannerPrimary() {
                 controls
                 autoPlay
                 playsInline
-                preload="metadata"
-                aria-label="AMD Creatives showreel"
+                preload="auto"
                 className="block max-h-[85dvh] w-auto max-w-full object-contain"
               >
                 Your browser does not support HTML video.
