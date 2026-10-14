@@ -124,7 +124,7 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
           scrolled
-            ? 'border-b border-white/[0.09] bg-[#030713]/85 shadow-[0_8px_40px_rgba(0,0,0,0.2)] backdrop-blur-2xl'
+            ? 'border-b border-white/9 bg-[#030713]/85 shadow-[0_8px_40px_rgba(0,0,0,0.2)] backdrop-blur-2xl'
             : 'border-b border-white/[0.07] bg-[#030713]/35 backdrop-blur-md'
         }`}
       >
