@@ -6,10 +6,10 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 
 const navLinks = [
-  { label: 'Work', href: '#creativesPortfolio' },
-  { label: 'Services', href: '#creativesService' },
-  { label: 'Process', href: '#creativesProcess' },
   { label: 'About', href: '#creativesAbout' },
+  { label: 'Work', href: '#creativesPortfolio' },
+  { label: 'Process', href: '#creativesProcess' },
+  { label: 'Services', href: '#creativesService' },
   { label: 'FAQ', href: '#creativesFaqs' },
 ];
 
