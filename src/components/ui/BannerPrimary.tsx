@@ -9,8 +9,6 @@ const avatars = [
   '/avatars/avatar-1.webp',
   '/avatars/avatar-2.webp',
   '/avatars/avatar-3.webp',
-  '/avatars/avatar-1.webp',
-  '/avatars/avatar-2.webp',
 ];
 
 const services = [
