@@ -107,7 +107,7 @@ export default function ContactSection() {
 
   const bookingConfigured =
     GOOGLE_BOOKING_URL.startsWith("https://calendar.google.com/") &&
-    !GOOGLE_BOOKING_URL.includes("PASTE_YOUR_");
+    !GOOGLE_BOOKING_URL.includes("https://calendar.app.google/U9EcXuYTJcfk7eRR9");
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
