@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@deemlol/next-icons": "^0.2.7",
     "@hcaptcha/react-hcaptcha": "^2.0.2",
     "@next/third-parties": "^16.2.4",
     "clsx": "^2.1.1",
