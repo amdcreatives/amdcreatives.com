@@ -1,12 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: 'export', // CRITICAL: This generates a 'out' folder instead of a server build
   images: {
-    unoptimized: true, // GitHub Pages doesn't support the Next.js image optimization server
+    // Required if your deployment doesn't support Next.js image optimization.
+    unoptimized: true,
   },
-  // basePath: '/your-repo-name', // Only uncomment if your site is NOT on a custom domain
+
+  // Keep basePath commented out unless your site requires it.
+  // basePath: "/your-repo-name",
 };
 
 export default nextConfig;
